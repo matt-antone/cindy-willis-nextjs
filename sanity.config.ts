@@ -7,10 +7,10 @@ import { structure } from "./sanity.structure";
 
 export default defineConfig({
   name: 'default',
-  title: 'walkerscayresorts.com',
+  title: process.env.SANITY_STUDIO_PROJECT_NAME || 'Sanity Studio',
 
-  projectId: 'b9d6znpl',
-  dataset: 'production',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID || '',
+  dataset: process.env.SANITY_STUDIO_DATASET || '',
 
   plugins: [structureTool({ structure }), visionTool(), media()],
 

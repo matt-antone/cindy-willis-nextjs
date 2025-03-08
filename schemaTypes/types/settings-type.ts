@@ -44,8 +44,6 @@ export const settings = defineType({
         hotspot: true,
       },
     },
-    { ...fields.gallery, name: "agents", title: "Agents", description: "Add agents to the contact form." },
-    { ...fields.gallery, name: "logos", title: "Logos", description: "Add logos to the footer." },
     {
       type: "object",
       name: "navigation",
@@ -115,59 +113,7 @@ export const settings = defineType({
             },
           ],
         },
-        {
-          type: "object",
-          name: "imageNavigation",
-          title: "Image Navigation",
-          fields: [
-            {
-              type: "string",
-              name: "title",
-              title: "Title",
-            },
-            {
-              type: "array",
-              name: "links",
-              title: "Links",
-              options: {
-                collapsible: true,
-                collapsed: true,
-              },
-              of: [
-                {
-                  type: "object",
-                  name: "item",
-                  title: "Item",
-                  fields: [
-                    {
-                      type: "image",
-                      name: "image",
-                      title: "Image",
-                    },
-                    {
-                      type: "string",
-                      name: "label",
-                      title: "Label",
-                    },
-                    {
-                      type: "string",
-                      name: "url",
-                      title: "Url",
-                      description: "Path to the page or external url.",
-                      validation: (Rule) => Rule.required().custom(validateUrlOrPath),
-                    },
-                  ],
-                },
-              ],
-            }
-          ]
-        },
       ],
-    },
-    {
-      type: "image",
-      name: "backgroundImage",
-      title: "Background Image",
     },
     {
       type: "array",
