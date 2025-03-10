@@ -113,6 +113,36 @@ export const settings = defineType({
             },
           ],
         },
+        {
+          type: "array",
+          name: "footer",
+          title: "Footer Navigation",
+          options: {
+            collapsible: true,
+            collapsed: true,
+          },
+          of: [
+            {
+              type: "object",
+              name: "item",
+              title: "Item",
+              fields: [
+                {
+                  type: "string",
+                  name: "label",
+                  title: "Label",
+                },
+                {
+                  type: "string",
+                  name: "url",
+                  title: "Url",
+                  description: "Path to the page or external url.",
+                  validation: (Rule) => Rule.required().custom(validateUrlOrPath),
+                },
+              ],
+            },
+          ],
+        },
       ],
     },
     {

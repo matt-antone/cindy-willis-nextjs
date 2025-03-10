@@ -4,6 +4,8 @@ import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './schemaTypes'
 import { media } from "sanity-plugin-media";
 import { structure } from "./sanity.structure";
+import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
+
 
 export default defineConfig({
   name: 'default',
@@ -12,7 +14,12 @@ export default defineConfig({
   projectId: process.env.SANITY_STUDIO_PROJECT_ID || '',
   dataset: process.env.SANITY_STUDIO_DATASET || '',
 
-  plugins: [structureTool({ structure }), visionTool(), media()],
+  plugins: [
+    structureTool({ structure }),
+    visionTool(),
+    media(),
+    unsplashImageAsset(),
+  ],
 
   schema: {
     types: schemaTypes,
