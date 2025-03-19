@@ -152,6 +152,18 @@ export type LinkImage = {
   url?: string
 }
 
+export type Imageblock = {
+  _type: 'imageblock'
+  asset?: {
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+  }
+  hotspot?: SanityImageHotspot
+  crop?: SanityImageCrop
+}
+
 export type Settings = {
   _id: string
   _type: 'settings'
@@ -171,30 +183,6 @@ export type Settings = {
     crop?: SanityImageCrop
     _type: 'image'
   }
-  agents?: Array<{
-    asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-    _key: string
-  }>
-  logos?: Array<{
-    asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-    _key: string
-  }>
   navigation?: {
     desktop?: Array<{
       label?: string
@@ -208,37 +196,12 @@ export type Settings = {
       _type: 'item'
       _key: string
     }>
-    imageNavigation?: {
-      title?: string
-      links?: Array<{
-        image?: {
-          asset?: {
-            _ref: string
-            _type: 'reference'
-            _weak?: boolean
-            [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-          }
-          hotspot?: SanityImageHotspot
-          crop?: SanityImageCrop
-          _type: 'image'
-        }
-        label?: string
-        url?: string
-        _type: 'item'
-        _key: string
-      }>
-    }
-  }
-  backgroundImage?: {
-    asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
+    footer?: Array<{
+      label?: string
+      url?: string
+      _type: 'item'
+      _key: string
+    }>
   }
   organizations?: Array<{
     label?: string
@@ -349,6 +312,31 @@ export type BlockContent = Array<
       _key: string
     } & Slideshow)
 >
+
+export type Post = {
+  _id: string
+  _type: 'post'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  date?: string
+  title?: string
+  slug?: Slug
+  description?: string
+  body?: BlockContent
+  gallery?: Array<{
+    asset?: {
+      _ref: string
+      _type: 'reference'
+      _weak?: boolean
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+    }
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+    _key: string
+  }>
+}
 
 export type Page = {
   _id: string

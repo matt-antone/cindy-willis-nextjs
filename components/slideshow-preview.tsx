@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 export const SlideshowPreview = (value: any) => {
   const { title, subtitle, images = [] } = value;
   const [currentIndex, setCurrentIndex] = useState(0);
-  console.log({ images, title, subtitle })
   // Auto-advance slides every 3 seconds
   useEffect(() => {
     if (images.length <= 1) return;

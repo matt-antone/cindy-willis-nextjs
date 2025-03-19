@@ -6,4 +6,9 @@ export const title = defineField({
   description: 'Enter the title of the page.',
   validation: Rule => Rule.required(),
   type: 'string',
+  options: {
+    search: {
+      weight: 10,
+    },
+  },
 })

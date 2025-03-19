@@ -5,4 +5,9 @@ export const body = defineField({
   title: 'Body',
   description: 'Add content to the page',
   type: 'blockContent',
+  options: {
+    search: {
+      weight: 9,
+    },
+  },
 })
