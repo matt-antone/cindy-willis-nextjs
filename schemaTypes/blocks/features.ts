@@ -1,7 +1,7 @@
 import { defineType } from "sanity";
 import { FeaturesPreview } from "../../components/features-preview";
 
-export const Features = defineType({
+export const features = defineType({
   name: "features",
   title: "Features",
   type: "object",
