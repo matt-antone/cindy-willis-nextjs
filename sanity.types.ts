@@ -122,15 +122,25 @@ export type Bento2 = {
   reverse?: boolean
 }
 
-export type TwoColumnList = {
-  _type: 'twoColumnList'
+export type Features = {
+  _type: 'features'
   heading?: string
-  items?: Array<string>
-}
-
-export type Vimeo = {
-  _type: 'vimeo'
-  url?: string
+  features?: Array<{
+    icon?: {
+      asset?: {
+        _ref: string
+        _type: 'reference'
+        _weak?: boolean
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+      }
+      hotspot?: SanityImageHotspot
+      crop?: SanityImageCrop
+      _type: 'image'
+    }
+    title?: string
+    description?: string
+    _key: string
+  }>
 }
 
 export type Youtube = {
@@ -298,19 +308,16 @@ export type BlockContent = Array<
     }
   | ({
       _key: string
-    } & TwoColumnList)
-  | ({
-      _key: string
     } & Youtube)
-  | ({
-      _key: string
-    } & Vimeo)
   | ({
       _key: string
     } & Bento2)
   | ({
       _key: string
     } & Slideshow)
+  | ({
+      _key: string
+    } & Features)
 >
 
 export type Post = {
@@ -323,6 +330,16 @@ export type Post = {
   title?: string
   slug?: Slug
   description?: string
+  categories?: Array<
+    {
+      _key: string
+    } & Tag
+  >
+  tags?: Array<
+    {
+      _key: string
+    } & Tag
+  >
   body?: BlockContent
   gallery?: Array<{
     asset?: {
@@ -473,6 +490,18 @@ export type SanityImageMetadata = {
   blurHash?: string
   hasAlpha?: boolean
   isOpaque?: boolean
+}
+
+export type Tags = Array<
+  {
+    _key: string
+  } & Tag
+>
+
+export type Tag = {
+  _type: 'tag'
+  value?: string
+  label?: string
 }
 
 export type MediaTag = {

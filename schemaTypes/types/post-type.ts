@@ -13,6 +13,8 @@ export const post = defineType({
     fields.title,
     fields.slug,
     fields.description,
+    fields.categories,
+    fields.tags,
     fields.body,
     fields.gallery,
   ],

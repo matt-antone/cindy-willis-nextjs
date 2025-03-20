@@ -1,10 +1,11 @@
 import { defineField } from "sanity";
 
 export const categories = defineField({
-  name: 'category',
-  title: 'Category',
-  type: 'reference',
-  weak: true,
-  to: [{ type: 'category' }],
+  name: 'categories',
+  title: 'Categories',
+  type: 'tags',
+  options: {
+    includeFromRelated: 'categories',
+  },
   description: 'Select a category for this post.'
 })

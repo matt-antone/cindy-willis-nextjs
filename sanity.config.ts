@@ -5,6 +5,7 @@ import { schemaTypes } from './schemaTypes'
 import { media } from "sanity-plugin-media";
 import { structure } from "./sanity.structure";
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
+import { tags } from 'sanity-plugin-tags'
 
 
 export default defineConfig({
@@ -19,6 +20,7 @@ export default defineConfig({
     visionTool(),
     media(),
     unsplashImageAsset(),
+    tags(),
   ],
 
   schema: {

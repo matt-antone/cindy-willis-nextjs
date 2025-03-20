@@ -3,11 +3,9 @@ import { defineField } from "sanity";
 export const tags = defineField({
   name: 'tags',
   title: 'Tags',
-  type: 'array',
-  of: [{
-    type: 'reference',
-    weak: true,
-    to: [{ type: 'tag' }]
-  }],
+  type: 'tags',
+  options: {
+    includeFromRelated: 'tags',
+  },
   description: 'Select tags for this post.'
 })
