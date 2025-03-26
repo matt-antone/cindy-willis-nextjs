@@ -1,6 +1,15 @@
 import { defineType } from 'sanity'
 import * as blocks from "../blocks"
 
+let blockTypes = [];
+blockTypes.push({
+  type: 'image',
+})
+blockTypes.push({
+  type: 'block',
+})
+blockTypes.push(...Object.keys(blocks).map((block) => ({ type: block })))
+
 export const blockContent = defineType({
   title: 'Block Content',
   name: 'blockContent',
@@ -10,16 +19,5 @@ export const blockContent = defineType({
       weight: 9,
     },
   },
-  of: [
-    {
-      type: 'image',
-    },
-    {
-      type: 'block',
-    },
-    { type: 'youtube' },
-    { type: 'bento2' },
-    { type: 'slideshow' },
-    { type: 'features' }
-  ],
+  of: blockTypes,
 })

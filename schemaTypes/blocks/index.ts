@@ -5,3 +5,4 @@ export * from './features';
 export * from './bento2';
 export * from './slideshow-block';
 export * from './custom'
+export * from './gallery-block'

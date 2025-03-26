@@ -68,6 +68,23 @@ export type Geopoint = {
   alt?: number
 }
 
+export type GalleryBlock = {
+  _type: 'galleryBlock'
+  usePageGallery?: boolean
+  images?: Array<{
+    asset?: {
+      _ref: string
+      _type: 'reference'
+      _weak?: boolean
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+    }
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+    _key: string
+  }>
+}
+
 export type Slideshow = {
   _type: 'slideshow'
   title?: string
@@ -308,7 +325,16 @@ export type BlockContent = Array<
     }
   | ({
       _key: string
+    } & Imageblock)
+  | ({
+      _key: string
+    } & LinkImage)
+  | ({
+      _key: string
     } & Youtube)
+  | ({
+      _key: string
+    } & Features)
   | ({
       _key: string
     } & Bento2)
@@ -317,7 +343,7 @@ export type BlockContent = Array<
     } & Slideshow)
   | ({
       _key: string
-    } & Features)
+    } & GalleryBlock)
 >
 
 export type Post = {
