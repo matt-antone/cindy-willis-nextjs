@@ -35,7 +35,7 @@ export const sections: any = defineField({
           name: "template",
           type: "string",
           title: "Template",
-          description: "Pick a tempalte to use for this section.",
+          description: "Pick a template to use for this section.",
           options: {
             list: templates,
           },

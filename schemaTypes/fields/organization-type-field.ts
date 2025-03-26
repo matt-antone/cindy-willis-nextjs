@@ -4,6 +4,7 @@ export const organizationType = defineField({
   name: "organizationType",
   title: "Organization Type",
   type: "string",
+  description: "Select the type of organization. This helps with SEO and structured data.",
   options: {
     list: [
       { title: "Airline", value: "airline" },

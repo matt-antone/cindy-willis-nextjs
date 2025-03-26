@@ -14,6 +14,7 @@ export const blockContent = defineType({
   title: 'Block Content',
   name: 'blockContent',
   type: 'array',
+  description: 'A flexible content area that can contain various types of blocks including text, images, and custom components.',
   options: {
     search: {
       weight: 9,
