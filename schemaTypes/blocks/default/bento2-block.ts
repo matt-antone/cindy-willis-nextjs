@@ -1,9 +1,9 @@
 import { defineType } from "sanity";
-import { Bento2Preview } from '../../components/bento2-preview'
+import { Bento2Preview } from '../../../components/bento2-preview'
 import { toHTML } from '@portabletext/to-html'
 
-export const bento2 = defineType({
-  name: "bento2",
+export const bento2Block = defineType({
+  name: "bento2Block",
   title: "Bento 2",
   type: "object",
   fields: [

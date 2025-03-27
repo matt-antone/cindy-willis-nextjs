@@ -1,8 +1,8 @@
 import { defineType } from "sanity";
-import { FeaturesPreview } from "../../components/features-preview";
-
-export const features = defineType({
-  name: "features",
+import FeaturesPreview from "../../../components/features-preview";
+import { ComponentType } from "react";
+export const featuresBlock = defineType({
+  name: "featuresBlock",
   title: "Features",
   type: "object",
   fields: [
@@ -47,6 +47,6 @@ export const features = defineType({
     }
   },
   components: {
-    preview: FeaturesPreview,
+    preview: FeaturesPreview as ComponentType<any>,
   },
 });

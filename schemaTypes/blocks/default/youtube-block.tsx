@@ -1,9 +1,9 @@
 import { defineField, defineType } from "sanity";
 import ReactPlayer from "react-player";
-import { Box as SanityBox } from "@sanity/ui";
+import { Box as SanityBox, Text, Flex } from "@sanity/ui";
 
-export const youtube = defineType({
-  name: "youtube",
+export const youtubeBlock = defineType({
+  name: "youtubeBlock",
   title: "Youtube",
   type: "object",
   description: 'Add a Youtube video by entering the URL to the video.',
@@ -26,14 +26,14 @@ export const youtube = defineType({
         ...props,
         renderPreview: () => {
           return (
-            <SanityBox padding={2}>
-              <p style={{ fontSize: 12, marginTop: 0 }}>YouTube Preview</p>
+            <Flex direction="column" gap={4}>
+              <Text style={{ fontSize: 12, marginTop: 0 }}>YouTube Preview</Text>
               {props?.value?.url ? (
-                <ReactPlayer {...props.value} width={320} height={180} />
+                <ReactPlayer {...props.value} width={560} height={315} />
               ) : (
-                <p>Please enter a url.</p>
+                <Text>Please enter a url.</Text>
               )}
-            </SanityBox>
+            </Flex>
           );
         },
       });

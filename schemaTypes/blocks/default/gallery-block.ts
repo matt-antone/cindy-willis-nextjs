@@ -1,6 +1,6 @@
 import { defineField, defineType } from "sanity";
 import { IoImagesOutline } from "react-icons/io5";
-import { GalleryPreview } from "../../components/gallery-preview";
+import { GalleryPreview } from "../../../components/gallery-preview";
 
 export const galleryBlock = defineType({
   name: "galleryBlock",

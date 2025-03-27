@@ -1,46 +1,40 @@
 import { defineField, defineType } from "sanity";
 import { IoImagesOutline } from "react-icons/io5";
-import { SlideshowPreview } from "../../components/slideshow-preview";
+import { SlideshowPreview } from "../../../components/slideshow-preview";
 
-export const carousel = defineType({
-  name: "carousel",
-  title: "Carousel",
+export const slideshowBlock = defineType({
+  name: "slideshowBlock",
+  title: "Slideshow",
   type: "object",
   icon: IoImagesOutline,
-  description: 'Add a collection of images with text that display as a carousel',
+  description: 'Add a collection of images that display as a slideshow',
   fields: [
     defineField({
       name: "title",
       title: "Title",
       type: "string",
-      description: "Optional title for the carousel",
+      description: "Optional title for the slideshow",
     }),
-
+    defineField({
+      name: "description",
+      title: "Description",
+      type: "text",
+      description: "Optional description text that appears below the slideshow",
+      rows: 2,
+    }),
     defineField({
       name: "images",
       title: "Images",
       type: "array",
       of: [
         {
-          type: "object",
-          fields: [
-            {
-              type: "image",
-              name: "image",
-              title: "Image",
-              options: {
-                hotspot: true,
-              },
-            },
-            {
-              type: "blockContent",
-              name: "body",
-              title: "Body",
-              description: "Formatted text that appears in the carousel",
-            },
-          ],
-        },
+          type: "image",
+          options: {
+            hotspot: true,
+          }
+        }
       ],
+      validation: (Rule) => Rule.required().min(1).max(6),
     }),
     defineField({
       name: "autoplay",

@@ -1,40 +1,47 @@
 import { defineField, defineType } from "sanity";
 import { IoImagesOutline } from "react-icons/io5";
-import { SlideshowPreview } from "../../components/slideshow-preview";
+import CarouselPreview from "../../../components/carousel-preview";
+import { ComponentType } from "react";
 
-export const slideshow = defineType({
-  name: "slideshow",
-  title: "Slideshow",
+export const carouselBlock = defineType({
+  name: "carouselBlock",
+  title: "Carousel",
   type: "object",
   icon: IoImagesOutline,
-  description: 'Add a collection of images that display as a slideshow',
+  description: 'Add a collection of images with text that display as a carousel',
   fields: [
     defineField({
       name: "title",
       title: "Title",
       type: "string",
-      description: "Optional title for the slideshow",
+      description: "Optional title for the carousel",
     }),
-    defineField({
-      name: "description",
-      title: "Description",
-      type: "text",
-      description: "Optional description text that appears below the slideshow",
-      rows: 2,
-    }),
+
     defineField({
       name: "images",
       title: "Images",
       type: "array",
       of: [
         {
-          type: "image",
-          options: {
-            hotspot: true,
-          }
-        }
+          type: "object",
+          fields: [
+            {
+              type: "image",
+              name: "image",
+              title: "Image",
+              options: {
+                hotspot: true,
+              },
+            },
+            {
+              type: "blockContent",
+              name: "body",
+              title: "Body",
+              description: "Formatted text that appears in the carousel",
+            },
+          ],
+        },
       ],
-      validation: (Rule) => Rule.required().min(1).max(6),
     }),
     defineField({
       name: "autoplay",
@@ -57,18 +64,10 @@ export const slideshow = defineType({
     select: {
       title: "title",
       images: "images",
-      image0: "images.0.asset.url",
-      image1: "images.1.asset.url",
-      image2: "images.2.asset.url",
-      image3: "images.3.asset.url",
-      image4: "images.4.asset.url",
-      image5: "images.5.asset.url",
-      image6: "images.6.asset.url",
     },
     prepare({ title, images }) {
-      console.log({ images })
       const imageArray: string[] = []
-      Object.keys(images).forEach((key) => {
+      images && Object.keys(images).forEach((key) => {
         console.log({ key, image: images[key] })
         if (images[key]) {
           imageArray.push(images[key])
@@ -83,6 +82,6 @@ export const slideshow = defineType({
     },
   },
   components: {
-    preview: SlideshowPreview,
+    preview: CarouselPreview as ComponentType<any>,
   },
 });

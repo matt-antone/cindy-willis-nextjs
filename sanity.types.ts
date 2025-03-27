@@ -68,6 +68,27 @@ export type Geopoint = {
   alt?: number
 }
 
+export type TestimonialBlock = {
+  _type: 'testimonialBlock'
+  quote?: string
+  author?: {
+    name?: string
+    title?: string
+    image?: {
+      asset?: {
+        _ref: string
+        _type: 'reference'
+        _weak?: boolean
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+      }
+      hotspot?: SanityImageHotspot
+      crop?: SanityImageCrop
+      _type: 'image'
+    }
+  }
+  rating?: number
+}
+
 export type GalleryBlock = {
   _type: 'galleryBlock'
   usePageGallery?: boolean
@@ -85,8 +106,8 @@ export type GalleryBlock = {
   }>
 }
 
-export type Slideshow = {
-  _type: 'slideshow'
+export type SlideshowBlock = {
+  _type: 'slideshowBlock'
   title?: string
   description?: string
   images?: Array<{
@@ -105,8 +126,8 @@ export type Slideshow = {
   interval?: number
 }
 
-export type Bento2 = {
-  _type: 'bento2'
+export type Bento2Block = {
+  _type: 'bento2Block'
   content?: Array<{
     children?: Array<{
       marks?: Array<string>
@@ -139,8 +160,8 @@ export type Bento2 = {
   reverse?: boolean
 }
 
-export type Features = {
-  _type: 'features'
+export type FeaturesBlock = {
+  _type: 'featuresBlock'
   heading?: string
   features?: Array<{
     icon?: {
@@ -160,35 +181,9 @@ export type Features = {
   }>
 }
 
-export type Youtube = {
-  _type: 'youtube'
+export type YoutubeBlock = {
+  _type: 'youtubeBlock'
   url?: string
-}
-
-export type LinkImage = {
-  _type: 'linkImage'
-  asset?: {
-    _ref: string
-    _type: 'reference'
-    _weak?: boolean
-    [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-  }
-  hotspot?: SanityImageHotspot
-  crop?: SanityImageCrop
-  alt?: string
-  url?: string
-}
-
-export type Imageblock = {
-  _type: 'imageblock'
-  asset?: {
-    _ref: string
-    _type: 'reference'
-    _weak?: boolean
-    [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-  }
-  hotspot?: SanityImageHotspot
-  crop?: SanityImageCrop
 }
 
 export type Settings = {
@@ -325,25 +320,22 @@ export type BlockContent = Array<
     }
   | ({
       _key: string
-    } & Imageblock)
+    } & YoutubeBlock)
   | ({
       _key: string
-    } & LinkImage)
+    } & FeaturesBlock)
   | ({
       _key: string
-    } & Youtube)
+    } & Bento2Block)
   | ({
       _key: string
-    } & Features)
-  | ({
-      _key: string
-    } & Bento2)
-  | ({
-      _key: string
-    } & Slideshow)
+    } & SlideshowBlock)
   | ({
       _key: string
     } & GalleryBlock)
+  | ({
+      _key: string
+    } & TestimonialBlock)
 >
 
 export type Post = {

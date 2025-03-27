@@ -1,8 +1,10 @@
 import { defineType } from "sanity";
 import { FaQuoteLeft } from "react-icons/fa";
+import TestimonialPreview from "../../../components/testimonial-preview";
+import { ComponentType } from "react";
 
-export const testimonial = defineType({
-  name: "testimonial",
+export const testimonialBlock = defineType({
+  name: "testimonialBlock",
   title: "Testimonial",
   type: "object",
   icon: FaQuoteLeft,
@@ -59,14 +61,19 @@ export const testimonial = defineType({
       author: "author.name",
       rating: "rating",
       image: "author.image.asset.url",
+      position: "author.title",
     },
-    prepare({ quote, author, rating, image }) {
+    prepare({ quote, author, rating, image, position }) {
       return {
-        title: author || "Testimonial",
-        subtitle: quote,
+        quote,
+        author: author || "Testimonial",
         media: image,
         rating: rating ? `${rating}/5` : undefined,
+        position: position || undefined,
       };
     },
+  },
+  components: {
+    preview: TestimonialPreview as ComponentType<any>,
   },
 }); 

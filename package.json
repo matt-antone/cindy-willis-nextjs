@@ -9,7 +9,10 @@
     "start": "sanity start",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "deploy-graphql": "sanity graphql deploy",
+    "seed": "bun scripts/seed/index.ts seed",
+    "seed:clean": "bun scripts/seed/index.ts seed --clean",
+    "seed:export": "bun scripts/seed/index.ts seed --export ./exports/seed-data"
   },
   "keywords": [
     "sanity"
@@ -29,11 +32,14 @@
     "sanity-plugin-asset-source-unsplash": "^3.0.3",
     "sanity-plugin-media": "^2.3.2",
     "sanity-plugin-tags": "^2.1.1",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.8",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.6.0",
     "@sanity/eslint-config-studio": "^5.0.1",
     "@types/react": "^18.0.25",
+    "commander": "^13.1.0",
     "eslint": "^9.9.0",
     "prettier": "^3.0.2",
     "typescript": "^5.1.6"

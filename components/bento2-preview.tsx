@@ -6,7 +6,7 @@ export const Bento2Preview = (props: any) => {
   return (
     <Flex padding={2} gap={4} direction="column">
       <Text weight="semibold">{title} {reverse && "Reversed"}</Text>
-      <Flex direction={reverse ? 'row-reverse' : 'row'} gap={3}>
+      <Flex direction={reverse ? 'row-reverse' : 'row'} gap={4}>
         {/* Content section - 2/3 width */}
         <Box flex={2}>
           {content && (

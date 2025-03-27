@@ -2,6 +2,7 @@ import { Box, Card, Flex, Stack, Text, Grid } from "@sanity/ui";
 import React, { useState, useEffect } from "react";
 
 export const SlideshowPreview = (value: any) => {
+  console.log(value)
   const { title, subtitle, images = [] } = value;
   const [currentIndex, setCurrentIndex] = useState(0);
   // Auto-advance slides every 3 seconds
