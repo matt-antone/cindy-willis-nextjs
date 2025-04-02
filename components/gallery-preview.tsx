@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Box, Card, Flex, Stack, Text, Grid } from "@sanity/ui";
 
 export const GalleryPreview: React.FunctionComponent<any> = (props) => {
-  console.log(props)
   const [currentIndex, setCurrentIndex] = React.useState(0);
   return (
     <Box>
@@ -18,6 +17,7 @@ export const GalleryPreview: React.FunctionComponent<any> = (props) => {
           props.images?.length > 1 && props.images.map((image: any, index: number) => {
             return (
               <img
+                key={`${image.asset.url}-${index}`}
                 onClick={() => setCurrentIndex(index)}
                 src={`${image.asset.url}?w=640&h=480&fit=crop`}
                 alt="Gallery Image" width={640} height={480}
@@ -27,7 +27,6 @@ export const GalleryPreview: React.FunctionComponent<any> = (props) => {
         }
       </Grid>
     </Box >
-
   );
 };
 
