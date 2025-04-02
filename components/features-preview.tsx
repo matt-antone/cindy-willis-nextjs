@@ -26,7 +26,7 @@ const FeaturesPreview: React.FunctionComponent<IFeaturesPreviewProps> = (props) 
       <Text size={2} weight="semibold" align="center">{heading || "no heading"}</Text>
       <Grid width="100%" columns={features.length} gap={2} padding={2}>
         {features.map((feature, index) => {
-          console.log(feature)
+
           const iconUrl = builder.image(feature.icon.asset).url();
           return (
             <Flex key={uuidv4()} padding={2} direction="column" align="center" gap={4} width="100%">
@@ -44,25 +44,3 @@ const FeaturesPreview: React.FunctionComponent<IFeaturesPreviewProps> = (props) 
 };
 
 export default FeaturesPreview;
-
-
-
-
-
-
-// export const FeaturesPreview<IFeature> = ({features, heading}: {features: IFeature[], heading: string }) => {
-
-//   return (
-//   <Box width="100%" padding={2}>
-//     <Text size={2} weight="semibold">{heading || "no heading"}</Text>
-//     <Grid width="100%" columns={features.length} gap={2} padding={2}>
-//       {features.map((feature, index) => (
-//         <Flex key={uuidv4()} padding={2} direction="column" gap={2} width="100%">
-//           <Text align="center" size={1} weight="semibold">{feature.title}</Text>
-//           <Text align="center" size={1}>{feature.description}</Text>
-//         </Flex>
-//       ))}
-//     </Grid>
-//   </Box>
-//   )
-// } 
