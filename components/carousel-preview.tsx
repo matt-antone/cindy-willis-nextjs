@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Box, Card, Flex, Stack, Text, Grid } from "@sanity/ui";
 import imageUrlBuilder from '@sanity/image-url'
 import { client } from '../sanity/lib/client'
-
+import { PortableText } from '@portabletext/react'
 const builder = imageUrlBuilder(client)
 
 interface ICarouselPreviewProps {
@@ -38,19 +38,20 @@ const CarouselPreview: React.FunctionComponent<ICarouselPreviewProps> = (props) 
       </Box>
     );
   }
-  console.log(images)
+
   return (
-    <Box padding={2}>
+    <Box key={`${title}-${subtitle}`} padding={2}>
       <Flex paddingBottom={2} gap={2} direction="column">
         <Text size={2} weight="semibold">Carousel: {title || 'Untitled'}</Text>
         <Text size={1} muted>{subtitle || `${images.length} images`}</Text>
       </Flex>
       <Card padding={0} radius={2} overflow="hidden" style={{ position: 'relative', aspectRatio: '16/9' }}>
-        {images.map((img: any, idx: number) => {
-          const imageUrl = builder.image(img.asset).url();
+        {images.map((slide: any, idx: number) => {
+          console.log(slide)
+          const imageUrl = slide.image ? builder.image(slide.image.asset).url() : '';
           return (
             <Flex
-              key={`${idx}-${img}`}
+              key={`${idx}-${slide}`}
               style={{
                 position: 'absolute',
                 top: 0,
@@ -68,9 +69,9 @@ const CarouselPreview: React.FunctionComponent<ICarouselPreviewProps> = (props) 
               direction="column"
               justify="flex-end"
             >
-              {img.title && <Text size={4} style={{ color: 'white' }} weight="semibold">{img.title}</Text>}
-              {img.description && <Text size={1} style={{ color: 'white' }}>{img.description}</Text>}
-              <p></p>
+              <Box style={{ color: 'white', marginBottom: 20 }}>
+                {slide.body && <PortableText value={slide.body} />}
+              </Box>
             </Flex>
           )
         })}
