@@ -11,7 +11,7 @@ interface ITestimonialPreviewProps {
 
 const TestimonialPreview: React.FunctionComponent<ITestimonialPreviewProps> = (props) => {
   const { quote, author, rating, media, position } = props;
-  console.log(props);
+
   return (
     <Flex padding={2} gap={6} align="center">
 
