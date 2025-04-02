@@ -22,3 +22,14 @@ export const blockContent = defineType({
   },
   of: blockTypes,
 })
+
+export const basicBlockContent = defineType({
+  title: 'Basic Block Content',
+  name: 'basicBlockContent',
+  type: 'array',
+  of: [
+    {
+      type: 'block',
+    },
+  ],
+})

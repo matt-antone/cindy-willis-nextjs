@@ -34,7 +34,7 @@ export const carouselBlock = defineType({
               },
             },
             {
-              type: "blockContent",
+              type: "basicBlockContent",
               name: "body",
               title: "Body",
               description: "Formatted text that appears in the carousel",
@@ -49,15 +49,6 @@ export const carouselBlock = defineType({
       type: "boolean",
       description: "Automatically advance through slides",
       initialValue: true,
-    }),
-    defineField({
-      name: "interval",
-      title: "Slide interval",
-      type: "number",
-      description: "Time in seconds between slide transitions",
-      initialValue: 5,
-      validation: (Rule) => Rule.min(1).max(15),
-      hidden: ({ document }) => !document?.autoplay,
     }),
   ],
   preview: {
