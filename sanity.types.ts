@@ -186,6 +186,80 @@ export type YoutubeBlock = {
   url?: string
 }
 
+export type CarouselBlock = {
+  _type: 'carouselBlock'
+  title?: string
+  images?: Array<{
+    image?: {
+      asset?: {
+        _ref: string
+        _type: 'reference'
+        _weak?: boolean
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+      }
+      hotspot?: SanityImageHotspot
+      crop?: SanityImageCrop
+      _type: 'image'
+    }
+    body?: Array<
+      | {
+          asset?: {
+            _ref: string
+            _type: 'reference'
+            _weak?: boolean
+            [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+          }
+          hotspot?: SanityImageHotspot
+          crop?: SanityImageCrop
+          _type: 'image'
+          _key: string
+        }
+      | {
+          children?: Array<{
+            marks?: Array<string>
+            text?: string
+            _type: 'span'
+            _key: string
+          }>
+          style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote'
+          listItem?: 'bullet' | 'number'
+          markDefs?: Array<{
+            href?: string
+            _type: 'link'
+            _key: string
+          }>
+          level?: number
+          _type: 'block'
+          _key: string
+        }
+      | ({
+          _key: string
+        } & CarouselBlock)
+      | ({
+          _key: string
+        } & YoutubeBlock)
+      | ({
+          _key: string
+        } & FeaturesBlock)
+      | ({
+          _key: string
+        } & Bento2Block)
+      | ({
+          _key: string
+        } & SlideshowBlock)
+      | ({
+          _key: string
+        } & GalleryBlock)
+      | ({
+          _key: string
+        } & TestimonialBlock)
+    >
+    _key: string
+  }>
+  autoplay?: boolean
+  interval?: number
+}
+
 export type Settings = {
   _id: string
   _type: 'settings'
@@ -318,6 +392,9 @@ export type BlockContent = Array<
       _type: 'block'
       _key: string
     }
+  | ({
+      _key: string
+    } & CarouselBlock)
   | ({
       _key: string
     } & YoutubeBlock)
