@@ -1,113 +1,74 @@
 # Technical Context
 
 ## Technologies Used
-1. Core Framework
-   - Next.js 15.2.1
-   - React 19
-   - TypeScript 5
+1. **Core Framework**
+   - Sanity v3.80.1
+   - React 18.2.0
+   - TypeScript 5.1.6
 
-2. Content Management
-   - Sanity CMS v3
-   - next-sanity v7
-   - @sanity/image-url
-   - @sanity/vision
-   - Rich text content blocks
-   - Image optimization
-   - Asset management
+2. **UI Components**
+   - Styled Components 6.1.8
+   - React Icons 5.4.0
+   - Portable Text Components
 
-3. UI Components
-   - Radix UI
-   - Tailwind CSS
-   - Lucide React
-   - React Icons
+3. **Development Tools**
+   - Bun for package management
+   - ESLint for code linting
+   - Prettier for code formatting
 
-4. Development Tools
-   - ESLint
-   - TypeScript
-   - Tailwind CSS
-   - PostCSS
-
-## Content Schema Details
-1. Rich Text Capabilities
-   - Block content with multiple styles
-   - Inline formatting
-   - Lists and headings
-   - Links and references
-   - Image embedding
-
-2. Media Management
-   - Image optimization
-   - Hotspot and crop functionality
-   - Color palette extraction
-   - Metadata tracking
-   - File asset handling
-
-3. Component Types
-   - Bento grid layouts
-   - Feature lists
-   - Image slideshows
-   - YouTube embeds
-   - Link images
-
-4. Site Configuration
-   - Global settings
-   - Navigation structure
-   - Organization profiles
-   - Business information
-   - Contact details
+4. **Plugins**
+   - Sanity Plugin Asset Source Unsplash
+   - Sanity Plugin Media
+   - Sanity Plugin Tags
 
 ## Development Setup
-1. Environment Requirements
-   - Node.js
-   - npm/yarn/pnpm/bun
-   - Sanity CLI (optional)
+1. **Environment Requirements**
+   - Node.js environment
+   - Bun package manager
+   - Sanity CLI tools
 
-2. Configuration Files
-   - next.config.ts
-   - tailwind.config.ts
-   - tsconfig.json
-   - postcss.config.mjs
-   - eslint.config.mjs
+2. **Configuration Files**
+   - `.env` for environment variables
+   - `sanity.config.ts` for Sanity configuration
+   - `tsconfig.json` for TypeScript settings
+   - `eslint.config.mjs` for linting rules
 
-3. Environment Variables
-   - Sanity project ID
-   - Sanity dataset
-   - API tokens
-   - Environment-specific settings
+3. **Development Scripts**
+   - `dev`: Start development server
+   - `build`: Build production version
+   - `deploy`: Deploy to Sanity
+   - `seed`: Seed development data
 
 ## Technical Constraints
-1. Browser Support
-   - Modern browsers
-   - Progressive enhancement
-   - Responsive design
-
-2. Performance Requirements
-   - Fast page loads
-   - Efficient caching
-   - Optimized images
-   - Minimal bundle size
-
-3. Development Standards
+1. **Framework Limitations**
+   - Sanity v3 compatibility requirements
+   - React 18+ requirements
    - TypeScript strict mode
-   - ESLint rules
-   - Component patterns
-   - Code organization
+
+2. **Plugin Compatibility**
+   - Sanity plugin version requirements
+   - React component compatibility
+   - TypeScript type definitions
+
+3. **Development Requirements**
+   - Bun package manager
+   - Node.js environment
+   - Sanity CLI tools
 
 ## Dependencies
-1. Core Dependencies
-   - next: 15.2.1
-   - react: ^19.0.0
-   - sanity: ^3.78.1
-   - next-sanity: 7
+1. **Core Dependencies**
+   - @sanity/client
+   - @sanity/vision
+   - @portabletext/react
+   - @portabletext/to-html
 
-2. UI Dependencies
-   - @radix-ui components
-   - tailwindcss
-   - lucide-react
-   - react-icons
+2. **Development Dependencies**
+   - @sanity/eslint-config-studio
+   - @types/react
+   - @faker-js/faker
+   - TypeScript
 
-3. Development Dependencies
-   - typescript
-   - eslint
-   - tailwindcss
-   - postcss 
+3. **Plugin Dependencies**
+   - sanity-plugin-asset-source-unsplash
+   - sanity-plugin-media
+   - sanity-plugin-tags 

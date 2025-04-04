@@ -1,42 +1,38 @@
-# Project Brief
+# Sanity Standalone Studio Project Brief
 
 ## Project Overview
-This application is a boilerplate for creating simple websites and applications. This boilerplate will be used as a github template. The sanity studio and it's schema is meant to be setup in a different repository
+This is a standalone Sanity Content Studio project that provides a clean, modern content management interface. The project is built using Sanity v3 and includes various plugins and tools for content management.
 
 ## Core Requirements
-1. Next.js 15.2.1 application with TypeScript
-2. Sanity CMS integration without studio interface
-3. Modern UI components using Radix UI
-4. Styling with Tailwind CSS
-5. Type-safe development environment
-6. Efficient content management and caching system
+1. Provide a standalone content management interface
+2. Support real-time content editing
+3. Enable content modeling through schema definitions
+4. Support media management and asset handling
+5. Include data seeding capabilities for development
 
-## Goals
-1. Create a performant, type-safe web application
-2. Implement efficient content management through Sanity
-3. Maintain clean, maintainable codebase
-4. Ensure optimal user experience
-5. Implement proper caching strategies
+## Project Goals
+- Create a maintainable and extensible content studio
+- Provide a clean, user-friendly interface for content management
+- Enable efficient content modeling and validation
+- Support development workflows with seeding capabilities
 
 ## Scope
+The project includes:
+- Sanity Studio configuration
+- Schema definitions for content types
+- Media management capabilities
+- Development tools and scripts
+- Content seeding functionality
+
+## Out of Scope
 - Frontend application development
-- Sanity CMS integration
-- Content management system
-- API route implementation
-- Caching system
-- TypeScript implementation
-- UI component development
+- API integrations beyond Sanity
+- Custom authentication systems
+- Complex deployment configurations
 
 ## Success Criteria
-1. Successful integration of Next.js and Sanity CMS
-2. Efficient content delivery and caching
-3. Type-safe development environment
-4. Modern, responsive UI
-5. Optimal performance metrics
-6. Clean, maintainable codebase
-
-## Constraints
-1. No Sanity Studio interface
-2. TypeScript requirements
-3. Modern browser support
-4. Performance optimization requirements 
+1. Successful content modeling and validation
+2. Efficient media management
+3. Reliable content editing experience
+4. Working development environment with seeding capabilities
+5. Clean and maintainable codebase 

@@ -1,108 +1,68 @@
 # System Patterns
 
 ## Architecture Overview
-The application follows a modern Next.js architecture with the following key components:
-
-1. Frontend Layer
-   - Next.js App Router
-   - React components
-   - TypeScript implementation
-   - Tailwind CSS styling
-
-2. Content Management Layer
-   - Sanity CMS integration
-   - Content schemas
-   - Webhook notifications
-   - Cache management
-
-3. API Layer
-   - Next.js API routes
-   - Sanity client
-   - Cache clearing endpoints
-
-## Content Schema Structure
-1. Document Types
-   - `home`: Main landing page content
-   - `page`: Generic page content
-   - `post`: Blog post content
-   - `settings`: Global site settings
-   - `media.tag`: Media tagging system
-
-2. Content Types
-   - `blockContent`: Rich text content with multiple block types
-   - `bento2`: Two-column content layout
-   - `features`: Feature list component
-   - `slideshow`: Image carousel component
-   - `youtube`: YouTube video embedding
-   - `linkImage`: Image with link component
-
-3. Asset Types
-   - `sanity.imageAsset`: Image management
-   - `sanity.fileAsset`: File management
-   - `sanity.imageMetadata`: Image metadata
-   - `sanity.imageDimensions`: Image dimensions
-   - `sanity.imagePalette`: Image color palette
-   - `sanity.imageCrop`: Image cropping data
-   - `sanity.imageHotspot`: Image focus point
-
-4. Navigation Structure
-   - Desktop navigation
-   - Mobile navigation
-   - Footer navigation
-   - Organization links
-
-5. Organization Schema
-   - Business information
-   - Contact details
-   - Location data
-   - Gallery images
-   - Business type classification
+The Sanity Standalone Studio follows a modular architecture built on Sanity v3, with clear separation of concerns and extensible components.
 
 ## Key Technical Decisions
-1. Next.js App Router
-   - Modern routing system
-   - Server components by default
-   - Improved performance
+1. **Framework Choice**
+   - Sanity v3 as the core framework
+   - React for UI components
+   - TypeScript for type safety
 
-2. Sanity Integration
-   - Headless CMS approach
-   - Webhook-based updates
-   - Efficient content delivery
+2. **Plugin Architecture**
+   - Modular plugin system
+   - Extensible through Sanity plugins
+   - Custom plugin support
 
-3. TypeScript Implementation
-   - Type safety
-   - Better developer experience
-   - Improved maintainability
+3. **Schema Design**
+   - Modular schema definitions
+   - Type-safe schema validation
+   - Reusable schema components
 
-## Design Patterns
-1. Component Architecture
-   - Radix UI components
-   - Tailwind CSS styling
-   - Modular design
+## Design Patterns in Use
+1. **Schema Patterns**
+   - Modular schema composition
+   - Reusable field types
+   - Custom input components
 
-2. State Management
-   - React hooks
-   - Server components
-   - Client components
+2. **Plugin Patterns**
+   - Plugin-based architecture
+   - Extensible studio configuration
+   - Custom tool integration
 
-3. Data Flow
-   - Sanity → API → Frontend
-   - Webhook → Cache Clear → Revalidation
-   - Type-safe data handling
+3. **Development Patterns**
+   - TypeScript for type safety
+   - Modular component structure
+   - Development tooling integration
 
 ## Component Relationships
-1. Frontend Components
-   - Layout components
-   - Page components
-   - UI components
-   - Data fetching components
+1. **Core Components**
+   - Studio configuration
+   - Schema definitions
+   - Plugin system
 
-2. API Components
-   - Route handlers
-   - Cache management
-   - Sanity client
+2. **Extension Points**
+   - Custom input components
+   - Studio tools
+   - Asset sources
 
-3. Integration Points
-   - Sanity webhooks
-   - Cache clearing
-   - Content delivery 
+3. **Development Tools**
+   - Seeding system
+   - Development scripts
+   - Testing utilities
+
+## Data Flow
+1. **Content Management**
+   - Schema validation
+   - Content persistence
+   - Real-time updates
+
+2. **Media Handling**
+   - Asset upload
+   - Media processing
+   - Asset management
+
+3. **Development Workflow**
+   - Content seeding
+   - Development tools
+   - Testing support 
