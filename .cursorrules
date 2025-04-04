@@ -1,0 +1,82 @@
+# Project Intelligence
+
+## Critical Implementation Paths
+1. Content Management
+   - Use Sanity client for content fetching
+   - Implement webhook-based cache clearing
+   - Follow type-safe content schemas
+
+2. Component Development
+   - Use Radix UI for accessible components
+   - Follow Tailwind CSS patterns
+   - Implement responsive design
+
+3. API Routes
+   - Implement in app/api directory
+   - Use TypeScript for type safety
+   - Follow RESTful patterns
+
+## User Preferences
+1. Development Workflow
+   - TypeScript strict mode
+   - ESLint for code quality
+   - Component-based architecture
+
+2. Code Organization
+   - Feature-based structure
+   - Shared components in components/
+   - API routes in app/api/
+
+3. Documentation
+   - Keep memory bank updated
+   - Document component usage
+   - Maintain type definitions
+
+## Project-Specific Patterns
+1. Component Structure
+   - Use functional components
+   - Implement proper TypeScript types
+   - Follow accessibility guidelines
+
+2. State Management
+   - Use React hooks
+   - Server components by default
+   - Client components when needed
+
+3. Data Fetching
+   - Use Sanity client
+   - Implement proper caching
+   - Handle loading states
+
+## Known Challenges
+1. Performance
+   - Optimize image loading
+   - Implement efficient caching
+   - Monitor bundle size
+
+2. Content Updates
+   - Handle webhook notifications
+   - Manage cache invalidation
+   - Ensure real-time updates
+
+3. Type Safety
+   - Maintain strict TypeScript
+   - Define proper interfaces
+   - Handle edge cases
+
+## Tool Usage
+1. Development Tools
+   - Next.js for framework
+   - TypeScript for types
+   - Tailwind for styling
+   - ESLint for linting
+
+2. Content Management
+   - Sanity for CMS
+   - next-sanity for integration
+   - Webhooks for updates
+
+3. Testing Tools
+   - Jest for unit tests
+   - React Testing Library
+   - Cypress for E2E 
